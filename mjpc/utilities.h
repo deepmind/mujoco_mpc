@@ -68,9 +68,13 @@ double* SensorByName(const mjModel* m, const mjData* d,
 void GetTraces(double* traces, const mjModel* m, const mjData* d,
                int num_trace);
 
-// get keyframe data using string
-double* KeyFrameByName(const mjModel* m, const mjData* d,
-                       const std::string& name);
+// get keyframe `qpos` data using string
+double* KeyQPosByName(const mjModel* m, const mjData* d,
+                      const std::string& name);
+
+// get keyframe `qvel` data using string
+double* KeyQVelByName(const mjModel* m, const mjData* d,
+                      const std::string& name);
 
 // return a power transformed sequence
 void PowerSequence(double* t, double t_step, double t1, double t2, double p,
