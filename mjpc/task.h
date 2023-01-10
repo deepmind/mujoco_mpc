@@ -26,7 +26,7 @@ namespace mjpc {
 inline constexpr double kRiskNeutralTolerance = 1.0e-6;
 
 // maximum cost terms
-inline constexpr int kMaxCostTerms = 30;
+inline constexpr int kMaxCostTerms = 35;
 
 using ResidualFunction = void(const double* parameters, const mjModel* model,
                               const mjData* data, double* residual);
@@ -60,7 +60,7 @@ class Task {
   void Residuals(const mjModel* m, const mjData* d, double* residuals) const;
 
   // apply transition function
-  void Transition(const mjModel* m, mjData* d);
+  void Transition(const mjModel* m, mjData* d) const;
 
   int id = 0;             // task ID
   int transition_state;   // state

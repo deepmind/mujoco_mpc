@@ -159,8 +159,8 @@ void Task::Residuals(const mjModel* m, const mjData* d,
   residual_(residual_parameters.data(), m, d, residuals);
 }
 
-void Task::Transition(const mjModel* m, mjData* d) {
-  transition_state = transition_(transition_state, m, d);
+void Task::Transition(const mjModel* m, mjData* d) const {
+  transition_(transition_state, m, d);
 }
 
 // initial residual parameters from model
